@@ -13,8 +13,6 @@ public class ReqresTests extends TestBase {
                 .when()
                 .post("/api/users")
                 .then()
-                .log().status()
-                .log().body()
                 .statusCode(201)
                 .body("job", is("leader"));
     }
@@ -29,8 +27,6 @@ public class ReqresTests extends TestBase {
                 .when()
                 .post("/api/login")
                 .then()
-                .log().status()
-                .log().body()
                 .statusCode(200)
                 .body("token", is("QpwL5tke4Pnpja7X4"));
     }
@@ -42,8 +38,6 @@ public class ReqresTests extends TestBase {
                 .when()
                 .get("/api/users/2")
                 .then()
-                .log().status()
-                .log().body()
                 .statusCode(200)
                 .body("data.first_name", is("Janet"));
     }
@@ -55,8 +49,6 @@ public class ReqresTests extends TestBase {
                 .when()
                 .delete("/api/users/2")
                 .then()
-                .log().status()
-                .log().body()
                 .statusCode(204);
     }
     @Test
@@ -66,8 +58,6 @@ public class ReqresTests extends TestBase {
                 .when()
                 .get("/api/users/23")
                 .then()
-                .log().status()
-                .log().body()
                 .statusCode(404);
 
     }
