@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.is;
 
 public class ReqresTests extends TestBase {
     @Test
-    void RegistrationTest() {
+    void registrationTest() {
         given()
                 .contentType(JSON)
                 .body("{ \"name\": \"morpheus\", \"job\": \"leader\" }")
@@ -16,7 +16,7 @@ public class ReqresTests extends TestBase {
                 .statusCode(201)
                 .body("job", is("leader"));
     }
-@Test
+    @Test
     void loginTest() {
         String body = "{ \"email\": \"eve.holt@reqres.in\", " +
                 "\"password\": \"cityslicka\" }";
